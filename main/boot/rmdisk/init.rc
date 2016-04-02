@@ -4,7 +4,6 @@
 # This is a common source of Android security bugs.
 #
 
-#import /init.environ.rc
 #import /init.${ro.hardware}.rc
 import /init.usb.rc
 import /init.trace.rc
@@ -31,36 +30,24 @@ on early-init
 
 on early_property:ro.build.type=user
     write /proc/bootprof "INIT: user build setting"
-# Begin Immersion changes, add immr_framework
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/conscrypt.jar:/system/framework/okhttp.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/webviewchromium.jar:/system/framework/mediatek-common.jar:/system/framework/mediatek-framework.jar:/system/framework/CustomProperties.jar:/system/framework/mediatek-telephony-common.jar:/system/framework/mediatek-tablet.jar:/system/framework/immr_framework.jar:/data/app/com.miui.core-1.apk:/data/app/com.miui.core-2.apk:/system/app/miui.apk:/data/app/com.miui.system-1.apk:/data/app/com.miui.system-2.apk:/system/app/miuisystem.apk
+    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/conscrypt.jar:/system/framework/okhttp.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/webviewchromium.jar:/system/framework/mediatek-common.jar:/system/framework/mediatek-framework.jar:/system/framework/CustomProperties.jar:/system/framework/mediatek-telephony-common.jar:/system/framework/mediatek-tablet.jar:/data/app/com.miui.core-1.apk:/data/app/com.miui.core-2.apk:/system/app/miui.apk:/data/app/com.miui.system-1.apk:/data/app/com.miui.system-2.apk:/system/app/miuisystem.apk
 #    export CLASSPATH /system/framework/mediatek-op.jar
     export BOOTCLASSPATH_EX /system/framework/mediatek-op.jar
-# Begin Immersion changes
-    export VIBE_PIPE_PATH /dev/pipes 
-# End Immersion changes
 
 on early_property:ro.build.type=userdebug
     write /proc/bootprof "INIT: userdebug build setting"
-# Begin Immersion changes, add immr_framework
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/conscrypt.jar:/system/framework/okhttp.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/webviewchromium.jar:/system/framework/mediatek-common.jar:/system/framework/mediatek-framework.jar:/system/framework/CustomProperties.jar:/system/framework/mediatek-telephony-common.jar:/system/framework/mediatek-tablet.jar:/system/framework/immr_framework.jar:/data/app/com.miui.core-1.apk:/data/app/com.miui.core-2.apk:/system/app/miui.apk:/data/app/com.miui.system-1.apk:/data/app/com.miui.system-2.apk:/system/app/miuisystem.apk
+    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/conscrypt.jar:/system/framework/okhttp.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/webviewchromium.jar:/system/framework/mediatek-common.jar:/system/framework/mediatek-framework.jar:/system/framework/CustomProperties.jar:/system/framework/mediatek-telephony-common.jar:/system/framework/mediatek-tablet.jar:/data/app/com.miui.core-1.apk:/data/app/com.miui.core-2.apk:/system/app/miui.apk:/data/app/com.miui.system-1.apk:/data/app/com.miui.system-2.apk:/system/app/miuisystem.apk
 #    export CLASSPATH /system/framework/mediatek-op.jar
     export BOOTCLASSPATH_EX /system/framework/mediatek-op.jar
-# Begin Immersion changes
-    export VIBE_PIPE_PATH /dev/pipes 
-# End Immersion changes
-
+    
 on early_property:ro.build.type=eng
     write /proc/bootprof "INIT: eng build setting"
-# Begin Immersion changes, add immr_framework
-    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/conscrypt.jar:/system/framework/okhttp.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/webviewchromium.jar:/system/framework/mediatek-common.jar:/system/framework/mediatek-framework.jar:/system/framework/CustomProperties.jar:/system/framework/mediatek-telephony-common.jar:/system/framework/mediatek-tablet.jar:/system/framework/emma.jar:/system/framework/immr_framework.jar:/data/app/com.miui.core-1.apk:/data/app/com.miui.core-2.apk:/system/app/miui.apk:/data/app/com.miui.system-1.apk:/data/app/com.miui.system-2.apk:/system/app/miuisystem.apk
+    export BOOTCLASSPATH /system/framework/core.jar:/system/framework/conscrypt.jar:/system/framework/okhttp.jar:/system/framework/core-junit.jar:/system/framework/bouncycastle.jar:/system/framework/ext.jar:/system/framework/framework.jar:/system/framework/framework2.jar:/system/framework/telephony-common.jar:/system/framework/voip-common.jar:/system/framework/mms-common.jar:/system/framework/android.policy.jar:/system/framework/services.jar:/system/framework/apache-xml.jar:/system/framework/webviewchromium.jar:/system/framework/mediatek-common.jar:/system/framework/mediatek-framework.jar:/system/framework/CustomProperties.jar:/system/framework/mediatek-telephony-common.jar:/system/framework/mediatek-tablet.jar:/system/framework/emma.jar:/data/app/com.miui.core-1.apk:/data/app/com.miui.core-2.apk:/system/app/miui.apk:/data/app/com.miui.system-1.apk:/data/app/com.miui.system-2.apk:/system/app/miuisystem.apk
 #    export CLASSPATH /system/framework/mediatek-op.jar
     export BOOTCLASSPATH_EX /system/framework/mediatek-op.jar
-# Begin Immersion changes
-    export VIBE_PIPE_PATH /dev/pipes 
-# End Immersion changes
 
 on early_property:ro.hardware=*
-    setprop ro.mtk.hardware mt6592
+    setprop ro.mtk.hardware mt6582
    
 on init
 
@@ -71,7 +58,7 @@ loglevel 6
 
 # setup the global environment
     export PATH /sbin:/vendor/bin:/system/sbin:/system/bin:/system/xbin
-    export LD_LIBRARY_PATH /vendor/lib:/system/lib
+    export LD_LIBRARY_PATH /vendor/lib:/system/lib:/custom/lib
     export ANDROID_BOOTLOGO 1
     export ANDROID_ROOT /system
     export ANDROID_ASSETS /system/app
@@ -117,7 +104,7 @@ loglevel 6
     mkdir /persist 0771 system system
 
     #Create CIP mount point
-    mkdir /custom
+	mkdir /custom
 
     # See storage config details at http://source.android.com/tech/storage/
     mkdir /mnt/media_rw 0700 media_rw media_rw
@@ -186,30 +173,18 @@ loglevel 6
     write /dev/cpuctl/apps/bg_non_interactive/cpu.rt_runtime_us 700000
     write /dev/cpuctl/apps/bg_non_interactive/cpu.rt_period_us 1000000
 
-# Begin Immersion changes
-    mkdir /dev/pipes 0771 shell shell
-# End Immersion changes
-
 # qtaguid will limit access to specific data based on group memberships.
 #   net_bw_acct grants impersonation of socket owners.
 #   net_bw_stats grants access to other apps' detailed tagged-socket stats.
     chown root net_bw_acct /proc/net/xt_qtaguid/ctrl
     chown root net_bw_stats /proc/net/xt_qtaguid/stats
 
-
 # Allow everybody to read the xt_qtaguid resource tracking misc dev.
 # This is needed by any process that uses socket tagging.
     chmod 0644 /dev/xt_qtaguid
 
-# Create location for fs_mgr to store abbreviated output from filesystem
-# checker programs.
-    mkdir /dev/fscklogs 0770 root system
-
 # Change ION driver permission
     chmod 0644 /dev/ion
-
-# Change MMP driver permission
-    chmod 0644 /dev/mmp
 
 # change lk_env permission
     chown root system /proc/lk_env
@@ -268,6 +243,11 @@ on fs_property:ro.mount.fs=UBIFS
     mount ubifs ubi@cache /cache nosuid nodev
     write /proc/bootprof "INIT:NAND:Mount_END"
 
+    # change key_provisioning 
+    mkdir /data/key_provisioning
+    chmod 0770 /data/key_provisioning
+    chown system system /data/key_provisioning    
+
 # mount different fs end
 
 # mount partition by some option
@@ -277,6 +257,10 @@ on fs_property:ro.persist.partition.support=yes
     exec /sbin/tune2fs -O has_journal /emmc@persist
     mount ext4 /emmc@persist /persist noatime nosuid nodev wait commit=1,nodelalloc,noauto_da_alloc
     write /proc/bootprof "INIT:PERSISIT:Mount_END"
+
+# Create location for fs_mgr to store abbreviated output from filesystem
+# checker programs.
+    mkdir /dev/fscklogs 0770 root system
 
 on fs
 
@@ -340,15 +324,14 @@ on post-fs
 on post-fs-data
     # We chown/chmod /data again so because mount is run as root + defaults
     chown system system /data
+    #chmod 0777 /data
     chmod 0771 /data
     chown system system /persist
     chmod 0771 /persist
-    # We restorecon /data in case the userdata partition has been reset.
-    restorecon /data
-
+    
     # Avoid predictable entropy pool. Carry over entropy from previous boot.
     copy /data/system/entropy.dat /dev/urandom
-
+    
     # Create dump dir and collect dumps.
     # Do this before we mount cache so eventually we can use cache for
     # storing dumps on platforms which do not have a dedicated dump partition.
@@ -383,8 +366,6 @@ on post-fs-data
     chmod 0660 /data/misc/wifi/wpa_supplicant.conf
     chmod 0660 /data/misc/wifi/p2p_supplicant.conf
     mkdir /data/local 0751 root root
-    mkdir /data/misc/media 0700 media media
-
     # For security reasons, /data/local/tmp should always be empty.
     # Do not place files or directories in /data/local/tmp
     mkdir /data/local/tmp 0771 shell shell
@@ -419,12 +400,6 @@ on post-fs-data
     #Modidfy to support Security porting and migration
     #change the permission of /data/drm and create /data/drm/wv so that the /data/drm/wv/kb.dat can be deleted.
     mkdir /data/drm 0774 drm system
-    mkdir /data/drm/wv 0770 drm system
-
-    # symlink to bugreport storage location
-    symlink /data/data/com.android.shell/files/bugreports /data/bugreports
-
-    # Separate location for storing security policy files on data
     mkdir /data/security 0711 system system
 
     # If there is no fs-post-data action in the init.<device>.rc file, you
@@ -451,12 +426,9 @@ on post-fs-data
     #Mali 3D GPU driver
     insmod /system/lib/modules/mali.ko
 
-    # Permissions for System Server and daemons.
-    chown root   radio  /sys/class/leds/lcd-backlight/brightness
-    chown root   radio  /sys/class/leds/lcd-backlight/duty
-    chown root   radio  /sys/class/leds/lcd-backlight/div
 
     # Touch Panel
+    #chmod 0664 /dev/touch
     chown root diag /sys/module/tpd_setting/parameters/tpd_calmat
     chown root diag /sys/module/tpd_setting/parameters/tpd_em_debounce_time
     chown root diag /sys/module/tpd_setting/parameters/tpd_mode
@@ -486,11 +458,11 @@ on post-fs-data
     # M4U
     #insmod /system/lib/modules/m4u.ko
     #mknod /dev/M4U_device c 188 0
-    chmod 0444 /dev/M4U_device
+    #chmod 0444 /dev/M4U_device
     #chown system media /dev/M4U_device
-    
-    # BWC
-    chmod 0770 /system/bin/bwc
+
+    #set mlock limit to infinate (for m4u operation)
+    setrlimit 8 -1 -1
 
     # Sensor
     chmod 0660 /dev/hwmsensor
@@ -505,12 +477,12 @@ on post-fs-data
     chmod 0660 /sys/class/misc/m_mag_misc/magdelay
     chmod 0660 /sys/class/misc/m_mag_misc/magoactive
     chmod 0660 /sys/class/misc/m_mag_misc/magodelay
+    
     chmod 0660 /sys/devices/platform/msensor/driver/cpsopmode
     chmod 0660 /sys/devices/platform/msensor/driver/cpsreptxy
     chmod 0660 /sys/devices/platform/msensor/driver/cpsreptz
     chmod 0660 /sys/devices/platform/gsensor/driver/cpsopmode
     chmod 0660 /sys/devices/platform/gsensor/driver/cpsrange
-    chmod 0660 /sys/devices/platform/gsensor/driver/cpsbandwidth
     chown system system /dev/hwmsensor
     chown system system /dev/msensor
     chown system system /dev/gsensor
@@ -523,13 +495,10 @@ on post-fs-data
     chown system /sys/class/misc/m_mag_misc/magdelay
     chown system /sys/class/misc/m_mag_misc/magoactive
     chown system /sys/class/misc/m_mag_misc/magodelay
-	#add for gyro
-	chmod 0660 /sys/bus/platform/drivers/gyroscope/chipinfo
-	chmod 0660 /sys/bus/platform/drivers/gyroscope/trace
-	chown system system/sys/bus/platform/drivers/gyroscope/chipinfo
-	chown system system/sys/bus/platform/drivers/gyroscope/trace
-	#Yanghaichao Add end
-    
+    # Hardwareinfo
+    chmod 0660 /dev/hardwareinfo
+    chown system system /dev/hardwareinfo
+        
     #Accdet
     chown root radio /sys/devices/platform/Accdet_Driver/driver/accdet_call_state
 
@@ -539,17 +508,9 @@ on post-fs-data
     chmod 0660 /dev/Vcodec
     chown system media /dev/Vcodec
 
-    #MJC
-    #insmod /system/lib/modules/mjc_kernel_driver.ko
-    #mknod /dev/MJC c 168 0
-    chmod 0660 /dev/MJC
-    chown system media /dev/MJC
-
     #kpd
     chown radio radio /sys/devices/platform/mtk-kpd/driver/kpd_call_state
-    chmod 0660 /sys/devices/platform/mtk-kpd/driver/kpd_as_wake
-    chown system /sys/devices/platform/mtk-kpd/driver/kpd_as_wake
-    
+    chown radio radio /sys/devices/platform/mtk-kpd/driver/kpd_as_wake
 
     #Charging Battery
     chown radio radio /sys/devices/platform/battery/Charging_CallState
@@ -558,6 +519,7 @@ on post-fs-data
     mkdir /data/misc/sensor 0774 system system
     mkdir /data/misc/akmd 0770 system system
     mkdir /data/misc/s62x 0771 compass compass
+    mkdir /data/misc/acdapi/ 0770 system system
     mkdir /data/acdapi/ 0770 system system
     chmod 0666 /data/misc/acdapi/calib.dat
     chmod 0666 /data/misc/acdapi/param.dat
@@ -573,7 +535,6 @@ on post-fs-data
     chown system /sys/devices/platform/msensor/driver/cpsreptz
     chown system /sys/devices/platform/gsensor/driver/cpsopmode
     chown system /sys/devices/platform/gsensor/driver/cpsrange
-    chown system /sys/devices/platform/gsensor/driver/cpsbandwidth
     mkdir	/data/data/mcube 0664 system system
 
     #EM eint
@@ -602,9 +563,6 @@ on post-fs-data
     chmod 0664 /sys/devices/platform/mt6333-user/mt6333_access
     chmod 0664 /sys/devices/platform/mt-pmic/pmic_access
 
-	#msensor
-	chmod 0664 /sys/bus/platform/drivers/msensor/reset
-
     # EM CPU Speed Stress
     chown root radio /proc/cpu_ss/cpu_ss_debug_mode
     chown root radio /proc/cpu_ss/cpu_ss_mode
@@ -622,6 +580,7 @@ on post-fs-data
     mkdir /data/misc/ppp 0770 bluetooth net_bt
 
     # Android SEC related device nodes
+    #insmod /system/lib/modules/sec.ko
     mknod /dev/sec c 182 0
     chmod 0660 /dev/sec
     chown root system /dev/sec
@@ -646,6 +605,8 @@ on post-fs-data
 
     # bluetooth
     mkdir /data/@btmtk 0770 bluetooth net_bt
+    chown bluetooth bluetooth /data/@btmtk/host_cache
+    chown bluetooth bluetooth /data/@btmtk/dev_cache
     chown bluetooth bluetooth /dev/hid-keyboard
     chmod 0660 /dev/hid-keyboard
     #Use uinput's default permission
@@ -709,6 +670,7 @@ on post-fs-data
     chown system system /dev/RT_Monitor
 
 
+
     #MATV
     chmod 0660 /dev/MATV
     chown system media /dev/MATV
@@ -764,7 +726,7 @@ on post-fs-data
     chmod 0660 /dev/mtk_sched
     chown system media /dev/mtk_sched
    
-    #BT SCO CVSD, for 72 and 82 CVSD codec on AP 
+    #BT SCO CVSD, for MT6572 and MT6582 CVSD codec on AP 
     chmod 0660 /dev/ebc
     chown system media /dev/ebc    
    
@@ -776,6 +738,19 @@ on post-fs-data
     #otp
     chmod 0660 /proc/driver/otp
     chown root system /proc/driver/otp
+
+    #autok
+    chown root system /sys/autok/debug
+    chown root system /sys/autok/param_count
+    chown root system /sys/autok/ready
+    chown root system /sys/autok/stage1/2/DONE
+    chown root system /sys/autok/stage1/2/PARAMS
+    chown root system /sys/autok/stage1/2/VOLTAGE
+    chown root system /sys/autok/stage2/2
+
+    #sn
+    chmod 0664 /sys/class/android_usb/android0/iSerial
+    chown root system /sys/class/android_usb/android0/iSerial
 # GPS
     mkdir /data/gps_mnlp 0771 gps system
 # End of adding by MTK drivers
@@ -829,17 +804,18 @@ on boot
     chown system system /proc/smb/ScreenComm
 
 	chmod 0660 /sys/power/autosleep
-    chmod 0660 /sys/power/state
     chmod 0660 /sys/power/sb_state
+    chmod 0660 /sys/power/state
     chmod 0660 /sys/power/wake_lock
     chmod 0660 /sys/power/wake_unlock
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
     chmod 0660 /proc/smb/ScreenComm
 
+
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_rate
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_slack
-    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_slack   
+    chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/timer_slack
     chown system system /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
     chown system system /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
@@ -855,37 +831,13 @@ on boot
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse
     chown system system /sys/devices/system/cpu/cpufreq/interactive/input_boost
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/input_boost
+    chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
+    chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
     chown system system /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/boostpulse_duration
     chown system system /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
     chmod 0660 /sys/devices/system/cpu/cpufreq/interactive/io_is_busy
 
-    chown system system /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
-    chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/cpu_num_base
-    chown system system /proc/cpufreq/cpufreq_limited_by_hevc
-    chmod 0660 /proc/cpufreq/cpufreq_limited_by_hevc
-    chown system system /proc/cpufreq/cpufreq_ptpod_temperature_limit
-    chmod 0660 /proc/cpufreq/cpufreq_ptpod_temperature_limit
-    chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-    chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-	
-    chown system system /sys/devices/system/cpu/cpufreq/hotplug/is_cpu_hotplug_disable
-    chmod 0660 /sys/devices/system/cpu/cpufreq/hotplug/is_cpu_hotplug_disable
-    chown system system /sys/devices/system/cpu/cpu1/online
-    chmod 0660 /sys/devices/system/cpu/cpu1/online
-    chown system system /sys/devices/system/cpu/cpu2/online
-    chmod 0660 /sys/devices/system/cpu/cpu2/online
-    chown system system /sys/devices/system/cpu/cpu3/online
-    chmod 0660 /sys/devices/system/cpu/cpu3/online
-    chown system system /sys/devices/system/cpu/cpu4/online
-    chmod 0660 /sys/devices/system/cpu/cpu4/online
-    chown system system /sys/devices/system/cpu/cpu5/online
-    chmod 0660 /sys/devices/system/cpu/cpu5/online
-    chown system system /sys/devices/system/cpu/cpu6/online
-    chmod 0660 /sys/devices/system/cpu/cpu6/online
-    chown system system /sys/devices/system/cpu/cpu7/online
-    chmod 0660 /sys/devices/system/cpu/cpu7/online
-    
     # Assume SMP uses shared cpufreq policy for all CPUs
     chown system system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
@@ -893,11 +845,22 @@ on boot
     chmod 0660 /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
+    chown system system /sys/class/leds/flashlight/brightness
     chown system system /sys/class/timed_output/vibrator/enable
     chown system system /sys/class/leds/keyboard-backlight/brightness
     chown system radio  /sys/class/leds/lcd-backlight/brightness
     chown system system /sys/class/leds/button-backlight/brightness
     chown system system /sys/class/leds/jogball-backlight/brightness
+    chown system system /sys/class/leds/red/brightness
+    chown system system /sys/class/leds/green/brightness
+    chown system system /sys/class/leds/blue/brightness
+    chown system system /sys/class/leds/white/brightness
+    chown system system /sys/class/leds/yellow/brightness
+    chown system system /sys/class/leds/cyan/brightness
+    chown system system /sys/class/leds/purple/brightness
+    chown system system /sys/class/leds/red/device/grpfreq
+    chown system system /sys/class/leds/red/device/grppwm
+    chown system system /sys/class/leds/red/device/blink
     chown system system /sys/class/leds/red/brightness
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/blue/brightness
@@ -916,10 +879,6 @@ on boot
     chown root   system /sys/kernel/debug/binder/perf_evalue
     chown root radio /proc/cmdline
 
-# Set these so we can remotely update SELinux policy
-    chown system system /sys/fs/selinux/load
-    chown system system /sys/fs/selinux/enforce
-
     chown system /sys/module/mlog/parameters/do_mlog
     chown system /sys/module/mlog/parameters/timer_intval
     
@@ -932,6 +891,10 @@ on boot
 	chown system system /sys/class/leds/red/trigger
 	chown system system /sys/class/leds/green/trigger
 	chown system system /sys/class/leds/blue/trigger
+	chown system system /sys/class/leds/white/trigger
+    	chown system system /sys/class/leds/yellow/trigger
+    	chown system system /sys/class/leds/cyan/trigger
+    	chown system system /sys/class/leds/purple/trigger
 
     # Permission for hibernation
     chown radio system /sys/power/tuxonice
@@ -1009,8 +972,9 @@ on boot
     setprop net.tcp.buffersize.hsupa   4094,87380,524288,4096,16384,524288
     setprop net.tcp.buffersize.hsdpa   4094,87380,524288,4096,16384,524288
     setprop net.tcp.buffersize.hspap   4094,87380,1220608,4096,16384,1220608
-    setprop net.tcp.buffersize.edge    4093,26280,35040,4096,16384,35040
-    setprop net.tcp.buffersize.gprs    4092,8760,11680,4096,8760,11680
+    setprop net.tcp.buffersize.edge    4094,87380,524288,4096,16384,524288
+    setprop net.tcp.buffersize.gprs    4094,87380,524288,4096,16384,524288
+
 
 		
     class_start core
@@ -1035,7 +999,6 @@ on property:vold.decrypt=trigger_post_fs_data
 
 on property:vold.decrypt=trigger_restart_min_framework
     write /sys/power/state on
-    write /sys/power/state disable
     write /sys/class/leds/lcd-backlight/brightness  120
     start msensord
     class_start main
@@ -1076,6 +1039,8 @@ service ueventd /sbin/ueventd
     class core
     critical
 
+service kisd /system/bin/kisd
+
 service healthd /sbin/healthd
     class core
     critical
@@ -1115,24 +1080,10 @@ service adbd /sbin/adbd
     class core
     socket adbd stream 660 system system
     disabled
-    seclabel u:r:adbd:s0
 
 # adbd on at boot in emulator
 on property:ro.kernel.qemu=1
     start adbd
-
-service memsicd /system/bin/memsicd
-	class main
-	oneshot
-
-service bmx056d /system/bin/bmx056d
-     class main
-     oneshot
-
-service lsm330fd /system/bin/lsm330fd
-     class main
-     oneshot
-
 
 service drvbd /system/bin/drvbd
     class main
@@ -1143,7 +1094,7 @@ service debuggerd /system/bin/debuggerd
     class main
 
 service mobile_log_d /system/bin/mobile_log_d
-	class main
+    class main
     
 service bugreport /system/bin/dumpstate -d -p -B \
         -o /data/data/com.android.shell/files/bugreports/bugreport
@@ -1162,7 +1113,6 @@ service servicemanager /system/bin/servicemanager
     onrestart restart surfaceflinger
     onrestart restart drm
     onrestart restart aal
-    onrestart restart bwc
 
 service vold /system/bin/vold
     class core
@@ -1200,7 +1150,7 @@ service atci_service /system/bin/atci_service
 	socket atci-serv-fw stream 660 radio system 
 	user root 
 	disabled
-	group radio system                         
+	group radio system
 
 service atcid-daemon-u /system/bin/atcid
 	socket adb_atci_socket stream 660 radio system
@@ -1211,7 +1161,7 @@ service atcid-daemon-u /system/bin/atcid
 
 service atcid-daemon-e /system/bin/atcid
 	socket adb_atci_socket stream 660 radio system
-	user root
+	user root 
 	group radio system
 	disabled
 	oneshot
@@ -1238,15 +1188,6 @@ service pq /system/bin/pq
     group system graphics
     oneshot    
 
-# Begin Immersion changes
-# TouchSense Player Service
-service immvibed /system/bin/immvibed -p 99 -u 1000
-    class late_start
-    user root
-    group root
-    oneshot
-# End Immersion changes
-
 service surfaceflinger /system/bin/surfaceflinger
     class main
 #    user system
@@ -1256,7 +1197,7 @@ service surfaceflinger /system/bin/surfaceflinger
 service aal /system/bin/aal
     class main
     user system
-    group system graphics
+    group system graphics radio
 
 service zygote /system/bin/app_process -Xzygote /system/bin --zygote --start-system-server
     class main
@@ -1291,7 +1232,7 @@ service insmod insmod
 service rmmod rmmod 
     disabled
     oneshot        
-    
+
 #remove -puse_p2p_group_interface=1. our driver doesnot support this ffeature
 #    
 service p2p_supplicant /system/bin/wpa_supplicant \
@@ -1428,22 +1369,13 @@ service media /system/bin/mediaserver
     class main
     user root
     group audio camera graphics inet net_bt net_bt_admin net_bw_acct drmrpc media sdcard_r nvram ccci radio system
-#		KK defualt:
-#   group audio camera inet net_bt net_bt_admin net_bw_acct drmrpc mediadrm
     ioprio rt 4
 
-# BWC service
-service bwc /system/bin/bwc
-    class main
-    user system
-    group audio camera graphics inet net_bt net_bt_admin net_bw_acct drmrpc media sdcard_r nvram ccci radio system
-        
 service matv /system/bin/matv
     class main
     user system
     group system sdcard_rw media
     ioprio rt 4
-
 service vtservice /system/bin/vtservice
     class main
     socket soc_vt_tcv dgram 660 radio system
@@ -1461,8 +1393,8 @@ service bootanim /system/bin/bootanimation
     oneshot
 
 #service enableswap /system/bin/sh /enableswap.sh
-#   class core
-#   oneshot
+#    class core
+#    oneshot
 
 service dbus /system/bin/dbus-daemon --system --nofork
     class main
@@ -1588,7 +1520,7 @@ service ipod /system/bin/ipod
 service extmdlogger /system/bin/extmdlogger
     class main
     user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw ccci
+    group shell system radio sdcard_rw inet media_rw sdcard_r ccci
 
 service GoogleOtaAgent /system/bin/GoogleOtaBinder
     user system
@@ -1597,7 +1529,7 @@ service GoogleOtaAgent /system/bin/GoogleOtaBinder
 service mdlogger /system/bin/mdlogger
     class main
     user shell
-    group shell system radio sdcard_rw inet sdcard_r media_rw ccci
+    group shell system radio sdcard_rw inet media_rw sdcard_r ccci
     disabled
     oneshot
 
@@ -1607,14 +1539,14 @@ service dualmdlogger /system/bin/dualmdlogger
     group shell system radio sdcard_rw inet sdcard_r media_rw ccci
     disabled
     oneshot
-
+    
 service emcsmdlogger /system/bin/emcsmdlogger
     class main
     user shell
-    group system shell radio sdcard_rw inet sdcard_r media_rw ccci
+    group system shell radio sdcard_rw inet media_rw sdcard_r ccci
     disabled
     oneshot
-    
+
 #
 #sensor service (begin)
 #
@@ -1646,14 +1578,9 @@ service memsicd3416x /system/bin/memsicd3416x
 	 user system
     group system
     class main
+    oneshot
 
 service akmd8975 /system/bin/akmd8975
-    disabled
-    user system
-    group system
-    class main
-
-service akmd8963 /system/bin/akmd8963
     disabled
     user system
     group system
@@ -1666,12 +1593,6 @@ service akmd09911 /system/bin/akmd09911
     class main
 
 service bmm050d /system/bin/bmm050d
-    disabled
-    user system
-    group system
-    class main
-
-service bmm056d /system/bin/bmm056d
     disabled
     user system
     group system
@@ -1697,6 +1618,7 @@ service orientationd /system/bin/orientationd
 
 service AcdApiDaemon /system/bin/AcdApiDaemon
     disabled
+    oneshot
     user system
     group system
     class main
@@ -1706,18 +1628,24 @@ service geomagneticd /system/bin/geomagneticd
     user system
     group system input
     class main
-    
-service mc64xxd /system/bin/mc64xxd
-    disabled
-    user system
-    group system
-    class main
-    
-        
 #
 #sensor service (end)
 #
 
+service nvram_proximity /system/bin/logwrapper /system/bin/nvram_proximity
+	user root   
+	oneshot
+	disabled 
+	on property:nvram_init=Ready
+	start nvram_proximity	
+
+service nvram_acc /system/bin/logwrapper /system/bin/nvram_acc
+	user root   
+	oneshot
+	disabled 
+	on property:nvram_init=Ready
+	start nvram_acc
+	
 #
 #emsvr service (start)
 #
@@ -1725,9 +1653,6 @@ on property:ro.build.type=eng
     start emsvr
 
 on property:ro.build.type=user
-    start emsvr_user
-
-on property:ro.build.type=userdebug
     start emsvr_user
 
 service emsvr_user /system/bin/em_svr
@@ -1768,7 +1693,8 @@ service thermald /system/bin/thermald
     group system
 
 service sn /system/bin/sn
-    user root
+    user system
+    group system sdcard_r
     oneshot
 
 #
@@ -1821,37 +1747,5 @@ service MtkCodecService /system/bin/MtkCodecService
     class main
     user root
     group audio media sdcard_r
-
-# add by zhoulingyun for tp (atmel) start
-#on post-fs
-#write /sys/bus/i2c/devices/0-004a/update_cfg "RedMi3_Snowflake_300um_20140123.raw"
-# add by zhoulingyun for tp (atmel) end
-
-# add by zhoulingyun for tp (atmel) start
-on post-fs-data
-chown root /system/bin/init.atmel_ts.sh
-chmod 777 /system/bin/init.atmel_ts.sh
-
-service atmel_ts /system/bin/init.atmel_ts.sh
-	class main
-	user root
-	oneshot
-	
- # add by zhoulingyun for tp (atmel) end
-
-
-
-
-service memsicd /system/bin/memsicd
-     class main
-     oneshot
-
-service bmx056d /system/bin/bmx056d
-     class main
-     oneshot
-
-service lsm330fd /system/bin/lsm330fd
-     class main
-     oneshot
 
 import /init.miui.rc
