@@ -1,4 +1,0 @@
-appfile <services.jar>;
-
-# Fix mounting
-copy "%here%/server" "%smali%/com/android/server";
